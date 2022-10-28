@@ -1,3 +1,4 @@
+#include <math.h>
 int roma(int ID,int n,int SC[2] , int *H)
 {
   int  t=0,i,j,sum=0, sum2=0, ID_op;
