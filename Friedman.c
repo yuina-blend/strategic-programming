@@ -8,9 +8,19 @@ int Friedman(int ID, int n, int SC[2], int *H)
     {
         for (int i; i < n; i++)
         {
-            if (*(H + 2 * i) == 1)
+            if (ID == 0)
             {
-                return 1;
+                if (*(H + 2 * i + 1) == 1)
+                {
+                    return 1;
+                }
+            }
+            else if (ID == 1)
+            {
+                if (*(H + 2 * i) == 1)
+                {
+                    return 1;
+                }
             }
         } //一度でも裏切ったら以降すべて裏切る
         return 0;
