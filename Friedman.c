@@ -2,7 +2,7 @@ int Friedman(int ID, int n, int SC[2], int *H)
 {
     if (n == 0)
     {
-        return 0;
+        return 1;
     }
     else
     {
