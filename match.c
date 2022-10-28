@@ -8,7 +8,7 @@
 
 #include "functions.h"
 
-#define N 50 /* 試行回数 */
+#define N 200 /* 試行回数 */
 #define OID (id^1) /* 相手のid */
 #define CLIENT_0 "ID0" /* 名前 */
 #define CLIENT_1 "ID1"
@@ -59,7 +59,7 @@ int main(void){
 /////////////////////////////////////////
     for(j=0;j<n;j++){
       //以下で各自作成した関数を呼び出し
-		rh[0]=play_0(0, j, sc, h);
+		rh[0]=roma(0, j, sc, h);
     rh[1] = TitForTat(1, j, sc, h);
     // rh[1]=play_1(1, j, sc, h);
     	
