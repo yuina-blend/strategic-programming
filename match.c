@@ -6,6 +6,8 @@
 #include <unistd.h>
 #include <string.h>
 
+#include "functions.h"
+
 #define N 50 /* 試行回数 */
 #define OID (id^1) /* 相手のid */
 #define CLIENT_0 "ID0" /* 名前 */
@@ -56,8 +58,10 @@ int main(void){
 
 /////////////////////////////////////////
     for(j=0;j<n;j++){
+      //以下で各自作成した関数を呼び出し
 		rh[0]=play_0(0, j, sc, h);
-		rh[1]=play_1(1, j, sc, h);
+    rh[1] = TitForTat(1, j, sc, h);
+    // rh[1]=play_1(1, j, sc, h);
     	
 		for(k=0;k<2;k++){
 			*(h+(2*j)+k)=rh[k];
@@ -81,24 +85,19 @@ int main(void){
 /////////////////////////////////////////
 /////////////////////////////////////////
 
-int play_0(int ID,int n,int SC[2] , int *H)/*ID0の関数, 現在のターンはn（0始まり）, SC[ID]:IDの現在の得点*/
+int play_0(int ID, int n, int SC[2], int *H) /*関数 0*/
 {
-  int  t;
-  if (n == 0)
+  int t;
+  if (ID == 0)
   {
-    return 0;
+    t = rand() & 1;
   }
-  // else
-  // {
-  //   for (int i; i < n; i++)
-  //   {
-  //     if (*(H + 2 * i + 1) == 1)
-  //     {
-  //       return 1;
-  //     }
-  //   } //一度でも裏切ったら以降すべて裏切る
-  // }
-  return *(H + 2 * (n - 1) + 1);
+
+  if (ID == 1)
+  {
+    t = (rand() >> 1) & 1;
+  }
+  return t;
 }
 
 int play_1(int ID,int n,int SC[2] , int *H)/*ID1の関数*/
