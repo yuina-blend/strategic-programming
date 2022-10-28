@@ -1,3 +1,7 @@
+// 最初の一回は裏切る
+// その後相手が一度でも裏切れば裏切り続けるが、
+// 最初の裏切りによって相手が裏切りを選択するようになる可能性があるので、
+// 2回目は相手の手に関わらず協力する
 int Friedman(int ID, int n, int SC[2], int *H)
 {
     if (n == 0)
@@ -6,7 +10,7 @@ int Friedman(int ID, int n, int SC[2], int *H)
     }
     else
     {
-        for (int i = 0; i < n; i++)
+        for (int i = 1; i < n; i++)
         {
             if (ID == 0)
             {
