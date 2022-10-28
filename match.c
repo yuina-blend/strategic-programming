@@ -59,7 +59,7 @@ int main(void){
 /////////////////////////////////////////
     for(j=0;j<n;j++){
       //以下で各自作成した関数を呼び出し
-		rh[0]=roma(0, j, sc, h);
+		rh[0]=tatsuki(0, j, sc, h);
     rh[1] = TitForTat(1, j, sc, h);
     // rh[1]=play_1(1, j, sc, h);
     	
