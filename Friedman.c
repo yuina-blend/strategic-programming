@@ -6,7 +6,7 @@ int Friedman(int ID, int n, int SC[2], int *H)
     }
     else
     {
-        for (int i; i < n; i++)
+        for (int i = 0; i < n; i++)
         {
             if (ID == 0)
             {
